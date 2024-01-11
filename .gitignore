@@ -2,3 +2,4 @@
 log/
 docker-compose.yml
 promtail-config/promtail.yaml
+nginx-config/default.nginx.conf
