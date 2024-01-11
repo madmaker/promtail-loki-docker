@@ -2,7 +2,6 @@ version: '3'
 services:
   nginx:
     image: nginx
-    container_name: nginx
     ports:
       - "3100:80"
     volumes:
