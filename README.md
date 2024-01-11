@@ -22,7 +22,7 @@ Used tech stack:
           __path__: /var/www/nginx-proxy-hs1/log/nginx/*log
           host: grafana
 ~~~
-5. Copy `conf.d/default.nginx.conf.example` to `conf.d/default.nginx.conf`
+5. Copy `nginx-config/default.nginx.conf.example` to `nginx-config/default.nginx.conf`
 6. If you want to restrict access for all IP except of sertain Grafana Loki server, unkomment and edit following code in `conf.d/default.nginx.conf`:
 ~~~nginx configuration
     deny   all;
