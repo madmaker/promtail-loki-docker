@@ -25,7 +25,7 @@ Used tech stack:
 5. Copy `nginx-config/default.nginx.conf.example` to `nginx-config/default.nginx.conf`
 6. If you want to restrict access for all IP except of sertain Grafana Loki server, unkomment and edit following code in `conf.d/default.nginx.conf`:
 ~~~nginx configuration
-    allow  192.168.176.1/24;
+    allow  192.168.176.1;
     deny   all;
 ~~~
 
