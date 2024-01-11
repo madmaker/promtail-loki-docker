@@ -18,11 +18,11 @@ scrape_configs:
           __path__: /var/log/*log
           host: grafana
 
-  - job_name: nginx
+  - job_name: nginx-promtail
     static_configs:
       - targets:
           - localhost
         labels:
-          job: nginx
-          __path__: /var/www/nginx-proxy-hs1/log/nginx/*log
+          job: nginx-promtail
+          __path__: /var/nginx-log/*log
           host: grafana

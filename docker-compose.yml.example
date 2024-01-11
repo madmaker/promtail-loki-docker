@@ -4,17 +4,14 @@ services:
     image: nginx
     container_name: nginx
     ports:
-      - "80:80"
-      - "443:443"
+      - "3100:80"
     volumes:
       - ./conf.d/:/etc/nginx/conf.d/
-    networks:
-      - nginx-proxy-net
+      - ./log/nginx/:/var/log/nginx/
 
   loki:
     image: grafana/loki:latest
-    ports:
-      - "3100:3100"
+    hostname: loki
     command: -config.file=/etc/loki/local-config.yaml
     volumes:
       - ./loki-config:/etc/loki
@@ -25,9 +22,6 @@ services:
     volumes:
       - /var/log:/var/log
       - ./promtail-config:/etc/promtail
+      - ./log/nginx/:/var/nginx-log/
     command: -config.file=/etc/promtail/promtail.yaml
     restart: always
-
-networks:
-  nginx-proxy-net:
-    external: true
