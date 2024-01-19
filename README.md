@@ -29,6 +29,9 @@ Used tech stack:
     deny   all;
 ~~~
 
+### URL для Grafana Loki в Grafana:
+`http://ваш_сервер:3100/loki`
+
 ### Run
 
 1. Switch to `promtail-loki-docker`  folder

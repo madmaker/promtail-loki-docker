@@ -8,12 +8,18 @@ server {
 
     resolver 127.0.0.11;
 
+#     set $proxyurlne http://92.205.129.33:9100$request_uri;#Prometheus Node Exporter, если нужен - раскомментировать и нужно указать внешний IP сервера
     set $proxyurl http://loki:3100$request_uri;
     proxy_set_header Host $host;
 
-    location / {
+    location /loki {
         proxy_pass  $proxyurl;
     }
+
+#Prometheus Node Exporter, если нужен - раскомментировать и нужно указать внешний IP сервера
+#     location / {
+#         proxy_pass  $proxyurlne;
+#     }
 
     charset UTF-8;
 
